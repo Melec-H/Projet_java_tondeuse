@@ -83,18 +83,22 @@ public class Main {
         for (int i = 0; i <= lineInstructions.length()-1; i++) {
             lineInstructions.charAt(i);
             if(lineInstructions.charAt(i) == 'G') {
+
+                tondeuse.pivoterGauche();
+
                 System.out.println("------------------------------------------------------------------------");
-                System.out.println(" La tondeuse pivote à gauche ");
+                System.out.println(" La tondeuse pivote à gauche et se trouve maintenant en direction : " + tondeuse.getDirection());
                 System.out.println("------------------------------------------------------------------------");
-                //pivoter à gauche
-                //afficher nouvelle position
+
             }
             else if(lineInstructions.charAt(i) == 'D') {
+
+                tondeuse.pivoterDroite();
+
                 System.out.println("------------------------------------------------------------------------");
-                System.out.println(" La tondeuse pivote à droite ");
+                System.out.println(" La tondeuse pivote à droite et se trouve maintenant en direction : " + tondeuse.getDirection());
                 System.out.println("------------------------------------------------------------------------");
-                //pivoter à droite
-                //afficher nouvelle position
+
             }
             else if(lineInstructions.charAt(i) == 'A') {
                 System.out.println("------------------------------------------------------------------------");
@@ -115,7 +119,7 @@ public class Main {
         //split mouvement
         //While mouvement.lenght
         //test avance 1
-        
+
 
         //test avance 2
         System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
@@ -130,10 +134,6 @@ public class Main {
         grille.updateGrille(reallyoldx, reallyoldy, reallynewx, reallynewy);
         showGrille(grille);
 
-        //test pivot
-        System.out.println("----TESTTEST-----");
-        tondeuse.pivoterDroite();
-        System.out.println(tondeuse.getDirection());
 
         //test avance 3
         int oldx = tondeuse.getPositionX();
