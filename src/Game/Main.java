@@ -37,15 +37,15 @@ public class Main {
             System.out.println("stockage est: " + stockage);
 
 
-            // récupération de la dernière entrée de la list de tondeuse.txt
-            // script des mouvements
+            // Récupération de la dernière entrée de la list de tondeuse.txt
+            // Script des mouvements
 
 
             String lineInstructions = stockage.get(stockage.size()-1);
 
             System.out.println(" dernier : " + lineInstructions);
 
-            for (int i = 0; i <= lineInstructions.length(); i++) {
+            for (int i = 0; i <= lineInstructions.length()-1; i++) {
                 lineInstructions.charAt(i);
                 if(lineInstructions.charAt(i) == 'G') {
                     //pivoter à gauche
@@ -65,10 +65,6 @@ public class Main {
 
 
             }
-
-
-
-
 
         } catch (FileNotFoundException e) {
             System.out.println("Le fichier n'existe pas");
