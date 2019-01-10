@@ -53,22 +53,27 @@ public class Main {
         int tondeusePosY = tondeuse.getPositionY();
         System.out.println("direction: " + tondeuse.getDirection());
         //show?
-
         showGrille(grille);
 
         System.out.println("-----------");
         System.out.println("-----------");
         System.out.println("-----------");
+        //split mouvement
+
+        //While mouvement.lenght
+
         //simllation de deplacement
+
+        int newTondeusePosX;
         grille.updateGrille(tondeusePosX-1, tondeusePosY-1, 7, 1);
+        tondeuse.setPositionX(7);
+        tondeuse.setPositionY(1);
 
         //on reshow la grille dans la console
         showGrille(grille);
     }
 
-    private static void updateGrille(Grille grille){
 
-    }
     public static void showGrille(Grille grille){
         int nbCol = grille.getNbCol();
         int nbLig = grille.getNbLig();

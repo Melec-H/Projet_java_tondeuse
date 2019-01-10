@@ -18,10 +18,7 @@ public class Grille {
 
 
         grilleInit();
-
         affectGrille(stockage);
-
-
 
         System.out.println();
     }
@@ -50,7 +47,7 @@ public class Grille {
 
            } else if (valeur.equals("I")) {
                System.out.println("I detected");
-               grille[Integer.parseInt(stockage.get(it + 1))][Integer.parseInt(stockage.get(it + 2))] = 'I';
+               grille[Integer.parseInt(stockage.get(it + 1)) -1][Integer.parseInt(stockage.get(it + 2)) -1] = 'I';
            } else if (valeur.equals("T")) {
                System.out.println("T detected");
 
