@@ -61,11 +61,12 @@ public class Main {
         int tondeusePosY = tondeuse.getPositionY();
         System.out.println("direction: " + tondeuse.getDirection());
 
-        showGrille(grille);
-
         System.out.println("------------------------------------------------------------------------");
         System.out.println(" La partie commence ");
         System.out.println("------------------------------------------------------------------------");
+
+        // On montre la grille
+        showGrille(grille);
 
         // Récupération de la dernière entrée de la list de tondeuse.txt
         // Script des mouvements
