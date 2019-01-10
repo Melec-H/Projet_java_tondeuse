@@ -65,7 +65,14 @@ public class Main {
         System.out.println(" La partie commence ");
         System.out.println("------------------------------------------------------------------------");
 
-        // On montre la grille
+        // On montre la grille avec la tondeuse, les items et les obstacles
+
+        // Bloc code important pour les instructions
+        int reallyreallyoldx = tondeuse.getPositionX();
+        int reallyreallyoldy = tondeuse.getPositionY();
+        int reallyreallynewx = tondeuse.getPositionX();
+        int reallyreallynewy = tondeuse.getPositionY();
+        grille.updateGrille(reallyreallyoldx, reallyreallyoldy, reallyreallynewx, reallyreallynewy);
         showGrille(grille);
 
         // Récupération de la dernière entrée de la list de tondeuse.txt
@@ -108,19 +115,7 @@ public class Main {
         //split mouvement
         //While mouvement.lenght
         //test avance 1
-
-        // Premier T initial
-        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
-        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
-        int reallyreallyoldx = tondeuse.getPositionX();
-        int reallyreallyoldy = tondeuse.getPositionY();
-        tondeuse.avancer();
-        int reallyreallynewx = tondeuse.getPositionX();
-        int reallyreallynewy = tondeuse.getPositionY();
-        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
-        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
-        grille.updateGrille(reallyreallyoldx, reallyreallyoldy, reallyreallynewx, reallyreallynewy);
-        showGrille(grille);
+        
 
         //test avance 2
         System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
