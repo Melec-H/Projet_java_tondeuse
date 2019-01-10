@@ -40,11 +40,19 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Erreur durant la lecture du fichier");
         }
+
+        // Création de la grille
         Grille grille = new Grille(Integer.parseInt(stockage.get(0)), Integer.parseInt(stockage.get(1)), stockage);
         grille.afficher();
 
         // Instanciation de la tondeuse
         Tondeuse tondeuse = initTondeuse(stockage);
+
+        // Instanciation des obstacles
+
+
+        // Instanciation des items
+
 
         // Coordonnées de la tondeuse
         System.out.println("Position X: " + tondeuse.getPositionX());
@@ -52,7 +60,12 @@ public class Main {
         int tondeusePosX = tondeuse.getPositionX();
         int tondeusePosY = tondeuse.getPositionY();
         System.out.println("direction: " + tondeuse.getDirection());
-        //show?
+
+        showGrille(grille);
+
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println(" La partie commence ");
+        System.out.println("------------------------------------------------------------------------");
 
         // Récupération de la dernière entrée de la list de tondeuse.txt
         // Script des mouvements
@@ -62,14 +75,23 @@ public class Main {
         for (int i = 0; i <= lineInstructions.length()-1; i++) {
             lineInstructions.charAt(i);
             if(lineInstructions.charAt(i) == 'G') {
+                System.out.println("------------------------------------------------------------------------");
+                System.out.println(" La tondeuse pivote à gauche ");
+                System.out.println("------------------------------------------------------------------------");
                 //pivoter à gauche
                 //afficher nouvelle position
             }
             else if(lineInstructions.charAt(i) == 'D') {
+                System.out.println("------------------------------------------------------------------------");
+                System.out.println(" La tondeuse pivote à droite ");
+                System.out.println("------------------------------------------------------------------------");
                 //pivoter à droite
                 //afficher nouvelle position
             }
             else if(lineInstructions.charAt(i) == 'A') {
+                System.out.println("------------------------------------------------------------------------");
+                System.out.println(" La tondeuse avance si possible ");
+                System.out.println("------------------------------------------------------------------------");
                 //avancer d'une case sauf
                 //si obstacle, et si item dans inventaire, avancer, et item-1
                 //si item, item+1, avancer
@@ -79,12 +101,8 @@ public class Main {
 
         }
 
-        showGrille(grille);
 
-        System.out.println("-----------");
-        System.out.println("-----------");
-        System.out.println("-----------");
-        //simulation de deplacement
+        // Simulation de deplacement
         grille.updateGrille(tondeusePosX-1, tondeusePosY-1, 7, 1);
 
         //on reshow la grille dans la console
