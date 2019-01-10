@@ -36,6 +36,40 @@ public class Main {
             }
             System.out.println("stockage est: " + stockage);
 
+
+            // récupération de la dernière entrée de la list de tondeuse.txt
+            // script des mouvements
+
+
+            String lineInstructions = stockage.get(stockage.size()-1);
+
+            System.out.println(" dernier : " + lineInstructions);
+
+            for (int i = 0; i <= lineInstructions.length(); i++) {
+                lineInstructions.charAt(i);
+                if(lineInstructions.charAt(i) == 'G') {
+                    //pivoter à gauche
+                    //afficher nouvelle position
+                }
+                else if(lineInstructions.charAt(i) == 'D') {
+                    //pivoter à droite
+                    //afficher nouvelle position
+                }
+                else if(lineInstructions.charAt(i) == 'A') {
+                    //avancer d'une case sauf
+                    //si obstacle, et si item dans inventaire, avancer, et item-1
+                    //si item, item+1, avancer
+                    //si mur, ne rien faire
+                    //afficher nouvelle position
+                }
+
+
+            }
+
+
+
+
+
         } catch (FileNotFoundException e) {
             System.out.println("Le fichier n'existe pas");
         } catch (IOException e) {
@@ -53,27 +87,22 @@ public class Main {
         int tondeusePosY = tondeuse.getPositionY();
         System.out.println("direction: " + tondeuse.getDirection());
         //show?
+
         showGrille(grille);
 
         System.out.println("-----------");
         System.out.println("-----------");
         System.out.println("-----------");
-        //split mouvement
-
-        //While mouvement.lenght
-
-        //simllation de deplacement
-
-        int newTondeusePosX;
+        //simulation de deplacement
         grille.updateGrille(tondeusePosX-1, tondeusePosY-1, 7, 1);
-        tondeuse.setPositionX(7);
-        tondeuse.setPositionY(1);
 
         //on reshow la grille dans la console
         showGrille(grille);
     }
 
+    private static void updateGrille(Grille grille){
 
+    }
     public static void showGrille(Grille grille){
         int nbCol = grille.getNbCol();
         int nbLig = grille.getNbLig();
