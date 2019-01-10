@@ -90,13 +90,17 @@ public class Tondeuse {
     public void avancer(){
         switch (this.direction){
             case "N":
-                this.positionY = this.positionY - 1;
+                setPositionX(this.positionX - 1);
+                break;
             case "S":
-                this.positionY = this.positionY + 1;
+                setPositionX(this.positionX + 1);
+                break;
             case "E":
-                this.positionY = this.positionX + 1;
+                setPositionY(this.positionY + 1);
+                break;
             case "W":
-                this.positionY = this.positionX - 1;
+                setPositionY(this.positionY - 1);
+                break;
         }
     }
 }

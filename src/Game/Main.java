@@ -103,12 +103,55 @@ public class Main {
         }
 
 
-        // Simulation de deplacement
-        grille.updateGrille(tondeusePosX-1, tondeusePosY-1, 7, 1);
+        // NOUVEAU MELEC
 
-        //on reshow la grille dans la console
+        //split mouvement
+        //While mouvement.lenght
+        //test avance 1
+
+        // Premier T initial
+        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
+        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
+        int reallyreallyoldx = tondeuse.getPositionX();
+        int reallyreallyoldy = tondeuse.getPositionY();
+        tondeuse.avancer();
+        int reallyreallynewx = tondeuse.getPositionX();
+        int reallyreallynewy = tondeuse.getPositionY();
+        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
+        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
+        grille.updateGrille(reallyreallyoldx, reallyreallyoldy, reallyreallynewx, reallyreallynewy);
         showGrille(grille);
+
+        //test avance 2
+        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
+        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
+        int reallyoldx = tondeuse.getPositionX();
+        int reallyoldy = tondeuse.getPositionY();
+        tondeuse.avancer();
+        int reallynewx = tondeuse.getPositionX();
+        int reallynewy = tondeuse.getPositionY();
+        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
+        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
+        grille.updateGrille(reallyoldx, reallyoldy, reallynewx, reallynewy);
+        showGrille(grille);
+
+        //test pivot
+        System.out.println("----TESTTEST-----");
+        tondeuse.pivoterDroite();
+        System.out.println(tondeuse.getDirection());
+
+        //test avance 3
+        int oldx = tondeuse.getPositionX();
+        int oldy = tondeuse.getPositionY();
+        tondeuse.avancer();
+        int newx = tondeuse.getPositionX();
+        int newy = tondeuse.getPositionY();
+        grille.updateGrille(oldx, oldy, newx, newy);
+        showGrille(grille);
+        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
+        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
     }
+
 
     private static void updateGrille(Grille grille){
 
@@ -138,8 +181,7 @@ public class Main {
 
             if (valeur.equals("T")) {
                 System.out.println("T detected");
-                tondeuse = new Tondeuse(Integer.parseInt(stockage.get(it + 1)), Integer.parseInt(stockage.get(it + 2)));
-
+                tondeuse = new Tondeuse((Integer.parseInt(stockage.get(it + 1))-1), (Integer.parseInt(stockage.get(it + 2)))-1);
             }
             else if (valeur.equals("N")){
                 tondeuse.setDirection(valeur);

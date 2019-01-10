@@ -48,11 +48,6 @@ public class Grille {
            } else if (valeur.equals("I")) {
                System.out.println("I detected");
                grille[Integer.parseInt(stockage.get(it + 1)) -1][Integer.parseInt(stockage.get(it + 2)) -1] = 'I';
-           } else if (valeur.equals("T")) {
-               System.out.println("T detected");
-
-
-               grille[Integer.parseInt(stockage.get(it + 1)) - 1][Integer.parseInt(stockage.get(it + 2)) - 1] = 'T';
            }
            else{
                System.out.println("elsed");
@@ -61,7 +56,7 @@ public class Grille {
    }
 
    public void updateGrille(int oldX, int oldY, int newX, int newY){
-        this.grille[oldX][oldY] = '_';
+        this.grille[oldX][oldY] = 'x';
         this.grille[newX][newY] = 'T';
    }
 
