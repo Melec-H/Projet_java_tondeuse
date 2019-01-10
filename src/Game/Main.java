@@ -34,37 +34,6 @@ public class Main {
 
                 }
             }
-            System.out.println("stockage est: " + stockage);
-
-
-            // Récupération de la dernière entrée de la list de tondeuse.txt
-            // Script des mouvements
-
-
-            String lineInstructions = stockage.get(stockage.size()-1);
-
-            System.out.println(" dernier : " + lineInstructions);
-
-            for (int i = 0; i <= lineInstructions.length()-1; i++) {
-                lineInstructions.charAt(i);
-                if(lineInstructions.charAt(i) == 'G') {
-                    //pivoter à gauche
-                    //afficher nouvelle position
-                }
-                else if(lineInstructions.charAt(i) == 'D') {
-                    //pivoter à droite
-                    //afficher nouvelle position
-                }
-                else if(lineInstructions.charAt(i) == 'A') {
-                    //avancer d'une case sauf
-                    //si obstacle, et si item dans inventaire, avancer, et item-1
-                    //si item, item+1, avancer
-                    //si mur, ne rien faire
-                    //afficher nouvelle position
-                }
-
-
-            }
 
         } catch (FileNotFoundException e) {
             System.out.println("Le fichier n'existe pas");
@@ -74,15 +43,41 @@ public class Main {
         Grille grille = new Grille(Integer.parseInt(stockage.get(0)), Integer.parseInt(stockage.get(1)), stockage);
         grille.afficher();
 
-        //Instanciation de la tondeuse
+        // Instanciation de la tondeuse
         Tondeuse tondeuse = initTondeuse(stockage);
-        //Coordonnée de la tondeuse
+
+        // Coordonnées de la tondeuse
         System.out.println("Position X: " + tondeuse.getPositionX());
         System.out.println("Position Y: " + tondeuse.getPositionY());
         int tondeusePosX = tondeuse.getPositionX();
         int tondeusePosY = tondeuse.getPositionY();
         System.out.println("direction: " + tondeuse.getDirection());
         //show?
+
+        // Récupération de la dernière entrée de la list de tondeuse.txt
+        // Script des mouvements
+
+        String lineInstructions = stockage.get(stockage.size()-1);
+
+        for (int i = 0; i <= lineInstructions.length()-1; i++) {
+            lineInstructions.charAt(i);
+            if(lineInstructions.charAt(i) == 'G') {
+                //pivoter à gauche
+                //afficher nouvelle position
+            }
+            else if(lineInstructions.charAt(i) == 'D') {
+                //pivoter à droite
+                //afficher nouvelle position
+            }
+            else if(lineInstructions.charAt(i) == 'A') {
+                //avancer d'une case sauf
+                //si obstacle, et si item dans inventaire, avancer, et item-1
+                //si item, item+1, avancer
+                //si mur, ne rien faire
+                //afficher nouvelle position
+            }
+
+        }
 
         showGrille(grille);
 
