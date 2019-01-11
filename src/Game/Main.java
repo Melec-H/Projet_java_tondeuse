@@ -101,12 +101,14 @@ public class Main {
 
             }
             else if(lineInstructions.charAt(i) == 'A') {
-                int oldx = tondeuse.getPositionX();
-                int oldy = tondeuse.getPositionY();
-                tondeuse.avancer();
-                int newx = tondeuse.getPositionX();
-                int newy = tondeuse.getPositionY();
-                // grille.updateGrille(oldx, oldy, newx, newy);
+                try{
+                    int oldx = tondeuse.getPositionX();
+                    int oldy = tondeuse.getPositionY();
+                    tondeuse.avancer();
+                    int newx = tondeuse.getPositionX();
+                    int newy = tondeuse.getPositionY();
+
+                    // grille.updateGrille(oldx, oldy, newx, newy);
                     if (Character.toString(grille.getGrille(newx, newy)).equals("O")){
                         if(compteurItems>0){
                             compteurItems--;
@@ -154,6 +156,15 @@ public class Main {
                     }
 
                 }
+                catch (ArrayIndexOutOfBoundsException e){
+                    System.out.println("------------------------------------------------------------------------");
+                    System.out.println(" La tondeuse ne peut pas sortir du jardin, elle ne bouge pas ");
+                    System.out.println("------------------------------------------------------------------------");
+                    tondeuse.annulerAvancement();
+                }
+
+                }
+
 
             }
 
