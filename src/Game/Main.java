@@ -167,8 +167,12 @@ public class Main {
 
 
             }
+            System.out.println("------------------------------------------------------------------------");
+            System.out.println(" Position finale de tondeuse : " + (tondeuse.getPositionX()+1) + " : " + (tondeuse.getPositionY()+1));
+            System.out.println("------------------------------------------------------------------------");
 
-        }
+
+    }
 
 
 

@@ -7,4 +7,4 @@ I 3 7
 I 10 10
 I 6 7
 T 1 1 E
-M AAAAAGAGADGA
+M A
