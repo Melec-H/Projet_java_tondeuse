@@ -1,6 +1,6 @@
 package Game;
 
-        import java.util.*;
+import java.util.*;
 
 public class Grille {
 
@@ -20,7 +20,6 @@ public class Grille {
         grilleInit();
         affectGrille(stockage);
 
-        System.out.println();
     }
 
    private void grilleInit(){
@@ -39,24 +38,18 @@ public class Grille {
 
 
            String valeur = stockage.get(it);
-           System.out.println("la valeur est: " + valeur);
 
            if (valeur.equals("O")) {
-               System.out.println("O detected");
-               grille[Integer.parseInt(stockage.get(it + 1)) -1][Integer.parseInt(stockage.get(it + 2)) -1] = 'O';
+               this.grille[Integer.parseInt(stockage.get(it + 1)) -1][Integer.parseInt(stockage.get(it + 2)) -1] = 'O';
 
            } else if (valeur.equals("I")) {
-               System.out.println("I detected");
-               grille[Integer.parseInt(stockage.get(it + 1)) -1][Integer.parseInt(stockage.get(it + 2)) -1] = 'I';
-           }
-           else{
-               System.out.println("elsed");
+               this.grille[Integer.parseInt(stockage.get(it + 1)) -1][Integer.parseInt(stockage.get(it + 2)) -1] = 'I';
            }
        }
    }
 
    public void updateGrille(int oldX, int oldY, int newX, int newY){
-        this.grille[oldX][oldY] = 'x';
+        this.grille[oldX][oldY] = ' ';
         this.grille[newX][newY] = 'T';
    }
 
@@ -76,7 +69,4 @@ public class Grille {
 
     }
 
-    public void updateTondeusePos(int posX, int posY){
-
-    }
 }

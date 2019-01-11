@@ -103,6 +103,23 @@ public class Tondeuse {
                 break;
         }
     }
+
+    public void annulerAvancement(){
+        switch (this.direction){
+            case "N":
+                setPositionX(this.positionX + 1);
+                break;
+            case "S":
+                setPositionX(this.positionX - 1);
+                break;
+            case "E":
+                setPositionY(this.positionY - 1);
+                break;
+            case "W":
+                setPositionY(this.positionY + 1);
+                break;
+        }
+    }
 }
 //public ArrayList<Object> setPositionInGrille(int positionX, int positionY) {
 

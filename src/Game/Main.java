@@ -20,6 +20,8 @@ public class Main {
 
         String x;
         String y;
+        Integer compteurItems = 0;
+
         ArrayList<String> stockage = new ArrayList<>();
 
         try {
@@ -43,7 +45,6 @@ public class Main {
 
         // Création de la grille
         Grille grille = new Grille(Integer.parseInt(stockage.get(0)), Integer.parseInt(stockage.get(1)), stockage);
-        grille.afficher();
 
         // Instanciation de la tondeuse
         Tondeuse tondeuse = initTondeuse(stockage);
@@ -55,11 +56,9 @@ public class Main {
 
 
         // Coordonnées de la tondeuse
-        System.out.println("Position X: " + tondeuse.getPositionX());
-        System.out.println("Position Y: " + tondeuse.getPositionY());
+
         int tondeusePosX = tondeuse.getPositionX();
         int tondeusePosY = tondeuse.getPositionY();
-        System.out.println("direction: " + tondeuse.getDirection());
 
         System.out.println("------------------------------------------------------------------------");
         System.out.println(" La partie commence ");
@@ -74,6 +73,7 @@ public class Main {
         int reallyreallynewy = tondeuse.getPositionY();
         grille.updateGrille(reallyreallyoldx, reallyreallyoldy, reallyreallynewx, reallyreallynewy);
         showGrille(grille);
+
 
         // Récupération de la dernière entrée de la list de tondeuse.txt
         // Script des mouvements
@@ -101,51 +101,65 @@ public class Main {
 
             }
             else if(lineInstructions.charAt(i) == 'A') {
-                System.out.println("------------------------------------------------------------------------");
-                System.out.println(" La tondeuse avance si possible ");
-                System.out.println("------------------------------------------------------------------------");
-                //avancer d'une case sauf
-                //si obstacle, et si item dans inventaire, avancer, et item-1
-                //si item, item+1, avancer
-                //si mur, ne rien faire
-                //afficher nouvelle position
+                int oldx = tondeuse.getPositionX();
+                int oldy = tondeuse.getPositionY();
+                tondeuse.avancer();
+                int newx = tondeuse.getPositionX();
+                int newy = tondeuse.getPositionY();
+                // grille.updateGrille(oldx, oldy, newx, newy);
+                    if (Character.toString(grille.getGrille(newx, newy)).equals("O")){
+                        if(compteurItems>0){
+                            compteurItems--;
+
+                            System.out.println("------------------------------------------------------------------------");
+                            System.out.println(" La tondeuse rencontre un obstacle, elle utilise son item et avance ");
+                            System.out.println("------------------------------------------------------------------------");
+
+                            grille.updateGrille(oldx, oldy, newx, newy);
+
+                            // si on tombe sur un obstacle et qu'on a des items, on valide l'avance
+                        }
+
+                        else if (compteurItems == 0){
+
+                            tondeuse.annulerAvancement();
+
+                            System.out.println("------------------------------------------------------------------------");
+                            System.out.println(" La tondeuse rencontre un obstacle, elle ne possède pas d'item, n'avance pas");
+                            System.out.println("------------------------------------------------------------------------");
+
+                            // on annule l'avance si pas d'item
+                        }
+                        showGrille(grille);
+                    }
+                    else if(Character.toString(grille.getGrille(newx, newy)).equals(" ")) {
+
+                        System.out.println("------------------------------------------------------------------------");
+                        System.out.println(" La tondeuse avance ");
+                        System.out.println("------------------------------------------------------------------------");
+
+                        grille.updateGrille(oldx, oldy, newx, newy);
+                        showGrille(grille);
+
+                    }
+                    else if(Character.toString(grille.getGrille(newx, newy)).equals("I")){
+                        compteurItems++;
+
+                        System.out.println("------------------------------------------------------------------------");
+                        System.out.println(" La tondeuse rencontre un item, elle le récupère et avance ");
+                        System.out.println("------------------------------------------------------------------------");
+
+                        grille.updateGrille(oldx, oldy, newx, newy);
+                        showGrille(grille);
+                    }
+
+                }
+
             }
 
         }
 
 
-        // NOUVEAU MELEC
-
-        //split mouvement
-        //While mouvement.lenght
-        //test avance 1
-
-
-        //test avance 2
-        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
-        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
-        int reallyoldx = tondeuse.getPositionX();
-        int reallyoldy = tondeuse.getPositionY();
-        tondeuse.avancer();
-        int reallynewx = tondeuse.getPositionX();
-        int reallynewy = tondeuse.getPositionY();
-        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
-        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
-        grille.updateGrille(reallyoldx, reallyoldy, reallynewx, reallynewy);
-        showGrille(grille);
-
-
-        //test avance 3
-        int oldx = tondeuse.getPositionX();
-        int oldy = tondeuse.getPositionY();
-        tondeuse.avancer();
-        int newx = tondeuse.getPositionX();
-        int newy = tondeuse.getPositionY();
-        grille.updateGrille(oldx, oldy, newx, newy);
-        showGrille(grille);
-        System.out.println("new positionX tondeuse: " + tondeuse.getPositionX());
-        System.out.println("new positionY tondeuse: " + tondeuse.getPositionY());
-    }
 
 
     private static void updateGrille(Grille grille){
@@ -165,6 +179,7 @@ public class Main {
             }
             System.out.println(" | ");
         }
+
     }
 
     public static Tondeuse initTondeuse(ArrayList<String> stockage) {
@@ -175,7 +190,6 @@ public class Main {
             String valeur = stockage.get(it);
 
             if (valeur.equals("T")) {
-                System.out.println("T detected");
                 tondeuse = new Tondeuse((Integer.parseInt(stockage.get(it + 1))-1), (Integer.parseInt(stockage.get(it + 2)))-1);
             }
             else if (valeur.equals("N")){
