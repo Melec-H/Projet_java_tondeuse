@@ -106,6 +106,7 @@ public class Tondeuse {
 
     public void annulerAvancement(){
         switch (this.direction){
+
             case "N":
                 setPositionX(this.positionX + 1);
                 break;
