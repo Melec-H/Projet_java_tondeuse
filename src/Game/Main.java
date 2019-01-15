@@ -18,25 +18,32 @@ public class Main {
         String str = FileToLink.nextLine();
         System.out.println("Le chemin d'accès du fichier renseigné est le suivant : " + str);
 
-        String x;
-        String y;
+        // Compteur d'items acquis pour le parcours
         Integer compteurItems = 0;
 
+        // Déclaration d'une array list pour stocker les informations du fichier .txt
         ArrayList<String> stockage = new ArrayList<>();
 
+        // Système Try/Catch
         try {
+            // Création de l'objet fileReader
             FileReader fileReader = new FileReader(str);
+            // Création de l'objet bufferedReader
             BufferedReader bufferedReader = new BufferedReader((fileReader));
 
+            // Déclaration d'une variable string de valeur null ('' fonctionne aussi)
             String line = null;
 
+            // Boucle afin de récupérer chaque information du .txt dans "line"
             while ((line = bufferedReader.readLine()) != null) {
+                // Eclatage via la méthode split en enlevant les espaces
                 for (String retval : line.split(" ")) {
+                    // Attribution dans notre array list stockage
                     stockage.add(retval);
 
                 }
             }
-
+        // Gérer les exceptions et retourner un message dans la console
         } catch (FileNotFoundException e) {
             System.out.println("Le fichier n'existe pas");
         } catch (IOException e) {
@@ -49,17 +56,7 @@ public class Main {
         // Instanciation de la tondeuse
         Tondeuse tondeuse = initTondeuse(stockage);
 
-        // Instanciation des obstacles
-
-
-        // Instanciation des items
-
-
-        // Coordonnées de la tondeuse
-
-        int tondeusePosX = tondeuse.getPositionX();
-        int tondeusePosY = tondeuse.getPositionY();
-
+        // Début de la partie
         System.out.println("------------------------------------------------------------------------");
         System.out.println(" La partie commence ");
         System.out.println("------------------------------------------------------------------------");
@@ -74,12 +71,11 @@ public class Main {
         grille.updateGrille(reallyreallyoldx, reallyreallyoldy, reallyreallynewx, reallyreallynewy);
         showGrille(grille);
 
-
         // Récupération de la dernière entrée de la list de tondeuse.txt
         // Script des mouvements
-
         String lineInstructions = stockage.get(stockage.size()-1);
 
+        // Boucle pour lire le script
         for (int i = 0; i <= lineInstructions.length()-1; i++) {
             lineInstructions.charAt(i);
             if(lineInstructions.charAt(i) == 'G') {
@@ -101,14 +97,17 @@ public class Main {
 
             }
             else if(lineInstructions.charAt(i) == 'A') {
+
+                // Encore un Try/Catch (gérer le cas en dehors de la grille)
                 try{
                     int oldx = tondeuse.getPositionX();
                     int oldy = tondeuse.getPositionY();
+
                     tondeuse.avancer();
+
                     int newx = tondeuse.getPositionX();
                     int newy = tondeuse.getPositionY();
 
-                    // grille.updateGrille(oldx, oldy, newx, newy);
                     if (Character.toString(grille.getGrille(newx, newy)).equals("O")){
                         if(compteurItems>0){
                             compteurItems--;
@@ -174,12 +173,7 @@ public class Main {
 
     }
 
-
-
-
-    private static void updateGrille(Grille grille){
-
-    }
+    // Montrer la grille (visuel)
     public static void showGrille(Grille grille){
         int nbCol = grille.getNbCol();
         int nbLig = grille.getNbLig();
@@ -197,6 +191,7 @@ public class Main {
 
     }
 
+    // Init de la tondeuse
     public static Tondeuse initTondeuse(ArrayList<String> stockage) {
         Tondeuse tondeuse = new Tondeuse(1,1);
         for (Integer it = 2; it < (stockage.size() - 1); it++) {

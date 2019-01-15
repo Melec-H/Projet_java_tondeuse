@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07738954-4b70-4234-9eef-41d44b95d44a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tondeuse_java/Game/Area/Cheveux.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tondeuse_java/Game/Tondeuse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tondeuse_java/Game/Tondeuse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tondeuse_java/Game/Tools/DeplacementTondeuse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tondeuse_java/Game/Tools/Parameters$InstructionTondeuse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tondeuse_java/Game/Tools/Parameters$Orientation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tondeuse_java/Game/Tools/Parameters.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tondeuse_java/Game/Tools/Tondeuse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Area/Cheveux.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Area/Items.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Area/Obstacles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Grille.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Grille.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Tondeuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Tondeuse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Tools/DeplacementTondeuse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Tools/Parameters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Tools/Tondeuse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tondeuse.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="170" column="131" selection-start-line="170" selection-start-column="131" selection-end-line="170" selection-end-column="131" />
+            <state relative-caret-position="163">
+              <caret line="193" column="26" selection-start-line="193" selection-start-column="26" selection-end-line="193" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/Grille.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+            <state relative-caret-position="478">
+              <caret line="52" column="10" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -61,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/Tondeuse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="160">
+              <caret line="106" column="24" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -95,15 +82,15 @@
         <option value="$PROJECT_DIR$/src/Game/Area/Items.java" />
         <option value="$PROJECT_DIR$/src/Items.java" />
         <option value="$PROJECT_DIR$/src/Game/Items.java" />
-        <option value="$PROJECT_DIR$/src/Game/Grille.java" />
         <option value="$PROJECT_DIR$/tondeuse.txt" />
-        <option value="$PROJECT_DIR$/src/Game/Main.java" />
         <option value="$PROJECT_DIR$/tondeuse2.txt" />
         <option value="$PROJECT_DIR$/tondeuse3.txt" />
         <option value="$PROJECT_DIR$/tondeuse1.txt" />
         <option value="$PROJECT_DIR$/tondeuse4.txt" />
-        <option value="$PROJECT_DIR$/src/Game/Tondeuse.java" />
         <option value="$PROJECT_DIR$/src/Game/Tools/Parameters.java" />
+        <option value="$PROJECT_DIR$/src/Game/Tondeuse.java" />
+        <option value="$PROJECT_DIR$/src/Game/Main.java" />
+        <option value="$PROJECT_DIR$/src/Game/Grille.java" />
       </list>
     </option>
   </component>
@@ -118,6 +105,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,14 +129,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547397468532" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547556807849" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
@@ -193,16 +180,18 @@
       <workItem from="1547070862347" duration="7741000" />
       <workItem from="1547151060258" duration="31149000" />
       <workItem from="1547459978692" duration="91000" />
+      <workItem from="1547555652447" duration="1117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38981000" />
+    <option name="totallyTimeSpent" value="40098000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="733" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="734" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2657512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -211,7 +200,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.47113883" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.47040498" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -237,33 +226,11 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Game/Tools/DeplacementTondeuse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Area/Cheveux.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Area/Items.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Area/Obstacles.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Tools/Tondeuse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Tools/DeplacementTondeuse.java" />
+    <entry file="file://$PROJECT_DIR$/src/Game/Area/Cheveux.java" />
+    <entry file="file://$PROJECT_DIR$/src/Game/Area/Items.java" />
+    <entry file="file://$PROJECT_DIR$/src/Game/Area/Obstacles.java" />
+    <entry file="file://$PROJECT_DIR$/src/Game/Tools/Tondeuse.java" />
     <entry file="file://$PROJECT_DIR$/src/Game/Items.java" />
     <entry file="file://$PROJECT_DIR$/tondeuse.txt" />
     <entry file="file://$PROJECT_DIR$/tondeuse2.txt">
@@ -288,15 +255,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Tools/Parameters.java" />
-    <entry file="file://$PROJECT_DIR$/src/Game/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="170" column="131" selection-start-line="170" selection-start-column="131" selection-end-line="170" selection-end-column="131" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Making">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tondeuse1.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -305,22 +265,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Grille.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Tondeuse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="160">
+          <caret line="106" column="24" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Making">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/Game/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="193" column="26" selection-start-line="193" selection-start-column="26" selection-end-line="193" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Grille.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="52" column="10" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

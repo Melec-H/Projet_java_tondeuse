@@ -104,6 +104,7 @@ public class Tondeuse {
         }
     }
 
+    // Méthode : Reculer
     public void annulerAvancement(){
         switch (this.direction){
 
@@ -122,9 +123,7 @@ public class Tondeuse {
         }
     }
 }
-//public ArrayList<Object> setPositionInGrille(int positionX, int positionY) {
 
-//}
 
 
 

@@ -22,6 +22,7 @@ public class Grille {
 
     }
 
+    // Init de la grille vierge
    private void grilleInit(){
        for(int i=0; i<nbLig; i++){
            for(int j=0; j<nbCol; j++){
@@ -32,6 +33,7 @@ public class Grille {
        }
    }
 
+    // Affectation des obstacles et des items
    private void affectGrille(ArrayList<String> stockage){
 
        for (int it = 2;  it < (stockage.size() - 2); it++) {
@@ -48,6 +50,7 @@ public class Grille {
        }
    }
 
+   // Gére le déplacement de la tondeuse sur notre grille
    public void updateGrille(int oldX, int oldY, int newX, int newY){
         this.grille[oldX][oldY] = ' ';
         this.grille[newX][newY] = 'T';
@@ -60,13 +63,10 @@ public class Grille {
    public int getNbLig(){
         return this.nbLig;
    }
-    public int getNbCol(){
+   public int getNbCol(){
         return this.nbCol;
     }
 
-    public void afficher(){
-        System.out.println();
 
-    }
 
 }
