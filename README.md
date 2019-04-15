@@ -1,6 +1,6 @@
 # Projet_java_tondeuse
 
-Projet POO en groupe de quatre de développement en JAVA en ligne de commande rendu en deux jours.
+Projet POO, en groupe de quatre étudiants, de développement en JAVA en ligne de commande rendu en deux jours.
 
 Au lancement du main.java:
 -Lecture d'un fichier texte(modifiable).
